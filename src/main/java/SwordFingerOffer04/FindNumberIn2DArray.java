@@ -23,13 +23,16 @@ public class FindNumberIn2DArray {
         // Search from the bottom left corner of the rectangle
         int i = matrix.length-1, j = 0;
 
-        //
+        // Traverse to the upper right corner of the rectangle to exit the loop
         while (i >= 0 && j < matrix[0].length){
+            // Return true when the target value is found
             if (matrix[i][j] == target){
                 return true;
             }else if (matrix[i][j] > target){
+                // The current value is greater than the target value and search upwards
                 i--;
             }else{
+                // The current value is less than the target value and search to the right
                 j++;
             }
         }
